@@ -1,5 +1,5 @@
 /*!
- * perfect-scrollbar v1.5.0
+ * perfect-scrollbar v1.5.1
  * Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
  * Licensed under MIT
  */
@@ -1086,8 +1086,8 @@ function touch(i) {
 
         applyTouchMove(speed.x * 30, speed.y * 30);
 
-        speed.x *= 0.8;
-        speed.y *= 0.8;
+        speed.x *= i.settings.swipeEasingDecay;
+        speed.y *= i.settings.swipeEasingDecay;
       }, 10);
     }
   }
@@ -1119,6 +1119,7 @@ var defaultSettings = function () { return ({
   suppressScrollX: false,
   suppressScrollY: false,
   swipeEasing: true,
+  swipeEasingDecay: 0.8,
   useBothWheelAxes: false,
   wheelPropagation: true,
   wheelSpeed: 1,
