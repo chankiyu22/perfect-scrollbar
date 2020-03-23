@@ -191,8 +191,8 @@ export default function(i) {
 
         applyTouchMove(speed.x * 30, speed.y * 30);
 
-        speed.x *= 0.8;
-        speed.y *= 0.8;
+        speed.x *= i.settings.swipeEasingDecay;
+        speed.y *= i.settings.swipeEasingDecay;
       }, 10);
     }
   }
